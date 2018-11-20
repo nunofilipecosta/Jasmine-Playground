@@ -26,3 +26,12 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+
+*.js.map
+bower_components/
+node_modules/
+typings/
+app/**/*.js
+server/**/*.js
+test/**/*.js
+.vscode/settings.json
