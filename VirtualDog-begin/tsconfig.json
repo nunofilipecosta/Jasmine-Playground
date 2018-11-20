@@ -6,8 +6,8 @@
     "inlineSourceMap": true
   },
   "exclude": [
-    "node_modules",
-    "bower_components",
-    "typings"
+    "**/node_modules",
+    "**/bower_components",
+    "**/typings"
   ]
 }
