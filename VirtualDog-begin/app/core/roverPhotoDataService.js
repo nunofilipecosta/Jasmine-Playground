@@ -2,15 +2,13 @@ var dogsrus;
 (function (dogsrus) {
     var virtdog;
     (function (virtdog) {
-        var RoverPhotoDataService = /** @class */ (function () {
-            function RoverPhotoDataService($http, roverConfig) {
+        class RoverPhotoDataService {
+            constructor($http, roverConfig) {
                 this.$http = $http;
                 this.roverConfig = roverConfig;
             }
-            RoverPhotoDataService.prototype.getPhotos = function (earthDate, camera) {
-                if (earthDate === void 0) { earthDate = this.roverConfig.earthDate; }
-                if (camera === void 0) { camera = this.roverConfig.camera; }
-                var roverHttpConfig = {
+            getPhotos(earthDate = this.roverConfig.earthDate, camera = this.roverConfig.camera) {
+                let roverHttpConfig = {
                     method: 'GET',
                     params: {
                         'earth_date': earthDate,
@@ -20,17 +18,16 @@ var dogsrus;
                     },
                     url: this.roverConfig.roverUrl
                 };
-                return this.$http(roverHttpConfig).then(function (results) {
+                return this.$http(roverHttpConfig).then((results) => {
                     return results.data;
-                }, function (response) {
+                }, (response) => {
                     return response;
                 });
-            };
-            RoverPhotoDataService.$inject = ['$http', 'roverConfig'];
-            return RoverPhotoDataService;
-        }());
+            }
+        }
+        RoverPhotoDataService.$inject = ['$http', 'roverConfig'];
         virtdog.RoverPhotoDataService = RoverPhotoDataService;
         virtdog.getModuleCore().service('roverPhotoDataService', RoverPhotoDataService);
     })(virtdog = dogsrus.virtdog || (dogsrus.virtdog = {}));
 })(dogsrus || (dogsrus = {}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm92ZXJQaG90b0RhdGFTZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicm92ZXJQaG90b0RhdGFTZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLElBQVUsT0FBTyxDQTBCaEI7QUExQkQsV0FBVSxPQUFPO0lBQUMsSUFBQSxPQUFPLENBMEJ4QjtJQTFCaUIsV0FBQSxPQUFPO1FBQ3ZCO1lBRUUsK0JBQW9CLEtBQXNCLEVBQVUsV0FBd0I7Z0JBQXhELFVBQUssR0FBTCxLQUFLLENBQWlCO2dCQUFVLGdCQUFXLEdBQVgsV0FBVyxDQUFhO1lBQUksQ0FBQztZQUUxRSx5Q0FBUyxHQUFoQixVQUFpQixTQUE4QyxFQUFFLE1BQXdDO2dCQUF4RiwwQkFBQSxFQUFBLFlBQW9CLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUztnQkFBRSx1QkFBQSxFQUFBLFNBQWlCLElBQUksQ0FBQyxXQUFXLENBQUMsTUFBTTtnQkFDdkcsSUFBSSxlQUFlLEdBQXNCO29CQUN2QyxNQUFNLEVBQUUsS0FBSztvQkFDYixNQUFNLEVBQUU7d0JBQ04sWUFBWSxFQUFFLFNBQVM7d0JBQ3ZCLFFBQVEsRUFBRSxNQUFNO3dCQUNoQixTQUFTLEVBQUUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxNQUFNO3dCQUNsQyxnQkFBZ0IsRUFBRSxJQUFJLElBQUksRUFBRSxDQUFDLE9BQU8sRUFBRTtxQkFDdkM7b0JBQ0QsR0FBRyxFQUFFLElBQUksQ0FBQyxXQUFXLENBQUMsUUFBUTtpQkFDL0IsQ0FBQztnQkFFRixPQUFPLElBQUksQ0FBQyxLQUFLLENBQUMsZUFBZSxDQUFDLENBQUMsSUFBSSxDQUNyQyxVQUFDLE9BQU87b0JBQ04sT0FBTyxPQUFPLENBQUMsSUFBSSxDQUFDO2dCQUN0QixDQUFDLEVBQUUsVUFBQyxRQUFRO29CQUNWLE9BQU8sUUFBUSxDQUFDO2dCQUNsQixDQUFDLENBQUMsQ0FBQztZQUNQLENBQUM7WUFyQk0sNkJBQU8sR0FBRyxDQUFDLE9BQU8sRUFBRSxhQUFhLENBQUMsQ0FBQztZQXNCNUMsNEJBQUM7U0FBQSxBQXZCRCxJQXVCQztRQXZCWSw2QkFBcUIsd0JBdUJqQyxDQUFBO1FBQ0QsUUFBQSxhQUFhLEVBQUUsQ0FBQyxPQUFPLENBQUMsdUJBQXVCLEVBQUUscUJBQXFCLENBQUMsQ0FBQztJQUMxRSxDQUFDLEVBMUJpQixPQUFPLEdBQVAsZUFBTyxLQUFQLGVBQU8sUUEwQnhCO0FBQUQsQ0FBQyxFQTFCUyxPQUFPLEtBQVAsT0FBTyxRQTBCaEIifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm92ZXJQaG90b0RhdGFTZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicm92ZXJQaG90b0RhdGFTZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLElBQVUsT0FBTyxDQTBCaEI7QUExQkQsV0FBVSxPQUFPO0lBQUMsSUFBQSxPQUFPLENBMEJ4QjtJQTFCaUIsV0FBQSxPQUFPO1FBQ3ZCLE1BQWEscUJBQXFCO1lBRWhDLFlBQW9CLEtBQXNCLEVBQVUsV0FBd0I7Z0JBQXhELFVBQUssR0FBTCxLQUFLLENBQWlCO2dCQUFVLGdCQUFXLEdBQVgsV0FBVyxDQUFhO1lBQUksQ0FBQztZQUUxRSxTQUFTLENBQUMsWUFBb0IsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLEVBQUUsU0FBaUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxNQUFNO2dCQUN2RyxJQUFJLGVBQWUsR0FBc0I7b0JBQ3ZDLE1BQU0sRUFBRSxLQUFLO29CQUNiLE1BQU0sRUFBRTt3QkFDTixZQUFZLEVBQUUsU0FBUzt3QkFDdkIsUUFBUSxFQUFFLE1BQU07d0JBQ2hCLFNBQVMsRUFBRSxJQUFJLENBQUMsV0FBVyxDQUFDLE1BQU07d0JBQ2xDLGdCQUFnQixFQUFFLElBQUksSUFBSSxFQUFFLENBQUMsT0FBTyxFQUFFO3FCQUN2QztvQkFDRCxHQUFHLEVBQUUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxRQUFRO2lCQUMvQixDQUFDO2dCQUVGLE9BQU8sSUFBSSxDQUFDLEtBQUssQ0FBQyxlQUFlLENBQUMsQ0FBQyxJQUFJLENBQ3JDLENBQUMsT0FBTyxFQUFFLEVBQUU7b0JBQ1YsT0FBTyxPQUFPLENBQUMsSUFBSSxDQUFDO2dCQUN0QixDQUFDLEVBQUUsQ0FBQyxRQUFRLEVBQUUsRUFBRTtvQkFDZCxPQUFPLFFBQVEsQ0FBQztnQkFDbEIsQ0FBQyxDQUFDLENBQUM7WUFDUCxDQUFDOztRQXJCTSw2QkFBTyxHQUFHLENBQUMsT0FBTyxFQUFFLGFBQWEsQ0FBQyxDQUFDO1FBRC9CLDZCQUFxQix3QkF1QmpDLENBQUE7UUFDRCxRQUFBLGFBQWEsRUFBRSxDQUFDLE9BQU8sQ0FBQyx1QkFBdUIsRUFBRSxxQkFBcUIsQ0FBQyxDQUFDO0lBQzFFLENBQUMsRUExQmlCLE9BQU8sR0FBUCxlQUFPLEtBQVAsZUFBTyxRQTBCeEI7QUFBRCxDQUFDLEVBMUJTLE9BQU8sS0FBUCxPQUFPLFFBMEJoQiJ9

@@ -1,6 +1,6 @@
 describe('In the file dogObject.js', function () {
     describe('the dogObject\'s', function () {
-        var sut;
+        let sut;
         beforeEach(function () {
             sut = new dogsrus.virtdog.DogObject('test', true, false);
         });
@@ -15,7 +15,7 @@ describe('In the file dogObject.js', function () {
             describe('for an impervious object', function () {
                 it('should not change state', function () {
                     sut.impervious = true;
-                    var expectedState = sut.state;
+                    let expectedState = sut.state;
                     sut.chewOn();
                     expect(sut.state).toEqual(expectedState);
                 });

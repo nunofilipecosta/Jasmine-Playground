@@ -3,7 +3,7 @@ var dogsrus;
 (function (dogsrus) {
     var virtdog;
     (function (virtdog) {
-        var DogTailState;
+        let DogTailState;
         (function (DogTailState) {
             DogTailState[DogTailState["wagging"] = 0] = "wagging";
             DogTailState[DogTailState["elevated"] = 1] = "elevated";
